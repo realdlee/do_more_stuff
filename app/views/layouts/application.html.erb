@@ -44,13 +44,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">DoMoreStuff</a>
+          <a class="brand" href="#">Do More Stuff</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Calendar", "#"  %></li>
+              <li><%= link_to "About", "#"  %></li>
             </ul>
+            <ul class="nav pull-right">
+              <% if user_signed_in? %>
+                <li>Logged in as <strong><%= current_user.email %></strong>.
+                <%= link_to 'Edit profile', edit_user_registration_path %> |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+          </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -67,9 +76,9 @@
                 <h3>Sidebar</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
-                  <li><%= link_to "Link2", "/path2"  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
+                  <li><%= link_to "Link1", "#"  %></li>
+                  <li><%= link_to "Link2", "#"  %></li>
+                  <li><%= link_to "Link3", "#"  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
@@ -77,7 +86,7 @@
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Do More Stuff Company 2012</p>
       </footer>
 
     </div> <!-- /container -->
