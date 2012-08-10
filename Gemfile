@@ -8,7 +8,7 @@ gem 'rails', '3.2.7'
 gem 'sqlite3'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
-
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,9 +24,18 @@ end
 
 group :test, :development do
   gem 'quiet_assets'
+  gem 'rspec-rails'
+  gem 'thin'
 end
 
-gem 'jquery-rails'
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "factory_girl_rails"
+  gem "shoulda-matchers"
+  gem "launchy"
+  gem "database_cleaner"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

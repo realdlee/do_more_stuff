@@ -1,0 +1,18 @@
+<h1>Your Stuff</h1>
+<br/>
+<%#= link_to "Add a task", new_task_path %>
+<%= render 'form', :task => @task%>
+<br/>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Priority</th>
+      <th>Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= render (@tasks) || "You haven't created any tasks yet." %>
+    
+ </tbody>
+</table>

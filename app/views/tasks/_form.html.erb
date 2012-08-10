@@ -1,0 +1,27 @@
+<%= form_for task do |f| %>
+  
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <ul>
+      <% task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    Title <br/><%= f.text_field :title, :value => "Study Ruby" %><br/>
+    Priority (1-5)<br/><%= f.text_field :priority %><br/>
+    
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit "Add to list", class: "btn btn-primary"%>
+  </div>
+<% end %>
+<!-- 
+("show", "date", :default => Date.today, 
+    :order => [:month, :day], :start_month => Date.today.month, 
+    :end_month => Date.today.month + 3)  -->

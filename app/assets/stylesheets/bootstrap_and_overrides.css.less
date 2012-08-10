@@ -20,6 +20,12 @@ body {
 // Font Awesome
 @import "fontawesome";
 
+@import url(http://fonts.googleapis.com/css?family=Courgette);
+
+@import url(http://fonts.googleapis.com/css?family=Quando);
+
+@import url(http://fonts.googleapis.com/css?family=Codystar);
+
 // Your custom LESS stylesheets goes here
 //
 // Since bootstrap was imported above you have access to its mixins which
@@ -31,6 +37,21 @@ body {
 // Example:
 // @linkColor: #ff0000;
 
-h2 {
-  padding: 10px 0px;
+@navbarBackground: @red;
+@navbarBackgroundHighlight: @red;
+@navbarLinkColor: @white;
+
+.span4 {
+  padding: 75px 0px;
+}
+.brand {
+  font-family: 'Codystar', cursive;
+ 
+}
+h1 h2 {
+  padding: 0px 0px 20px 0px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Quando', serif;
 }

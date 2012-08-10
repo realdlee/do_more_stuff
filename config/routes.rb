@@ -1,10 +1,15 @@
 DoMoreStuff::Application.routes.draw do
-  
-  devise_for :users
 
-  root :to => "users#index"
-  
-  resources :users
+
+  authenticated :user do
+    root :to => "tasks#index"
+  end
+
+  root :to => "tasks#index"
+
+  devise_for :users 
+  resources :users, :only => [:show, :index]
+  resources :tasks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
